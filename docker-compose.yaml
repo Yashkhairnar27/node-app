@@ -1,7 +1,15 @@
-version: '3.9'
-
+version: '3'
 services:
-  web:
-    image: "devsecops-todo-app:latest"
+  node_app:
+    image: ${yash273}/node-app-test-new:latest
     ports:
-      - "8000:8000"
+      - "3000:3000"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - node_app
