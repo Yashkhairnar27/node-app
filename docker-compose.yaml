@@ -1,7 +1,7 @@
 version: '3'
 services:
   node_app:
-    image: ${yash273}/node-app-test-new:latest
+    image: yash273/node-app-test-new:latest
     ports:
       - "3000:3000"
 
